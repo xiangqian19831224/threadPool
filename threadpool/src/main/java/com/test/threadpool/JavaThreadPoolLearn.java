@@ -18,6 +18,7 @@ public class JavaThreadPoolLearn {
 		ThreadPoolExecutor executor = new ThreadPoolExecutor(2, threadNum, 300,
 				TimeUnit.MILLISECONDS, new ArrayBlockingQueue<Runnable>(3),
 				new ThreadPoolExecutor.CallerRunsPolicy());
+
 		for (int i = 0; i < threadNum; i++) {
 			executor.execute(new PrintStringThread(i, strList, threadNum));
 		}
